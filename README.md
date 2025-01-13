@@ -1,1 +1,1 @@
-# AKU-progression-image-classification
+# AKU-progression-efficientnet
