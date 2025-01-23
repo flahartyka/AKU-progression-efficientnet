@@ -13,8 +13,8 @@ dataset_name="cervical-dataset"  # Set the name here
 targets='combine_all' # make it as binary segmentation 'multi_all' for multi cls segmentation
 # Construct train and validation image list paths
 img_folder="/"  # Assuming this is the folder where images are stored
-train_img_list="datasets/cervical-dataset/train_5shot.csv"
-val_img_list="datasets/cervical-dataset/val_5shot.csv"
+train_img_list="datasets/train_5shot.csv"
+val_img_list="datasets/val_5shot.csv"
 
 
 # Construct the checkpoint directory argument
