@@ -9,12 +9,12 @@ mamba activate base
 # Define variables
 arch="vit_h"  # Change this value as needed
 finetune_type="adapter"
-dataset_name="lumbar-dataset"  # Assuming you set this if it's dynamic
+dataset_name="cervical-dataset"  # Set the name here
 targets='combine_all' # make it as binary segmentation 'multi_all' for multi cls segmentation
 # Construct train and validation image list paths
 img_folder="/"  # Assuming this is the folder where images are stored
-train_img_list="datasets/lumbar-dataset/train_5shot.csv"
-val_img_list="datasets/lumbar-dataset/val_5shot.csv"
+train_img_list="datasets/cervical-dataset/train_5shot.csv"
+val_img_list="datasets/cervical-dataset/val_5shot.csv"
 
 
 # Construct the checkpoint directory argument
