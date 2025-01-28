@@ -24,7 +24,7 @@ CUDA_LAUNCH_BLOCKING=1
 #cd SAM-datasets
 
 # Run the Python script
-python SingleGPU_train_finetune_noprompt.py \
+python SingleGPU_train_finetune_SAM.py \
     -if_warmup True \
     -finetune_type "$finetune_type" \
     -arch "$arch" \
