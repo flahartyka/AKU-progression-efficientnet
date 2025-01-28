@@ -11,9 +11,10 @@ os.environ['YOLO_CONFIG_DIR']= '/data/flahartyka/'
 os.environ['WANDB_DISABLED'] = 'true'
 os.environ['WANDB_MODE'] = 'disabled'
 
-save_dir = '/data/flahartyka/yolo_cervical/training'
+save_dir = '/data/flahartyka/yolo_cervical/training' # Save everything here
+
 # Load a model
-model = YOLO("yolov8n.pt")  # load a pretrained model (recommended for training)
+model = YOLO("yolov8n.pt")  # load pretrained YOLO model (recommended for training)
 
 # Train the model
 model.train(data="/data/flahartyka/yolo_cervical/training/dataset.yaml", epochs=50)
@@ -22,22 +23,12 @@ model.train(data="/data/flahartyka/yolo_cervical/training/dataset.yaml", epochs=
 #results = model("/data/flahartyka/yolo/training/AKU102_461_lumbar.png")  # predict on an image
 path = model.export(format="onnx")  # export the model to ONNX format
 
-
-#ONNX: export success ✅ 1.1s, saved as 'runs/detect/train2/weights/best.onnx' (11.7 MB)
-#Results saved to /vf/users/flahartyka/yolo/runs/detect/train2/weights
-#Predict:         yolo predict task=detect model=runs/detect/train2/weights/best.onnx imgsz=640
-
-#/data/flahartyka/yolo/training/images/0265-F-081Y1.png
-
 # Load the exported ONNX model
 onnx_model = YOLO("/data/flahartyka/yolo_cervical/runs/detect/train3/weights/best.onnx")
 
 # Run inference
-results = onnx_model("/data/flahartyka/Multilabel/Left_Cervical/AKU109_63_cervical.png")
-#("/data/flahartyka/Multilabel/Lumbar/AKU102_461_lumbar.png")
-
+results = onnx_model("/data/flahartyka/Multilabel/Left_Cervical") #predict on images
 os.mkdir('AKU_results')
-
 
 for result in results:
     img_name = result.path.split('/')[-1]
