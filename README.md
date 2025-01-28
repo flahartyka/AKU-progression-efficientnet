@@ -5,7 +5,7 @@ Here, you will find the source code for the image segmentation processes and tra
 
 -------------------------------------------------------------------------------------------------------------------------------
 # AKU EfficientNet Models
-In the directory `efficientnet` you will find the scripts to train DL models. Within `models`, you can find the trained model weights for narrowing, calcium, vacuum, global scores, and nitisinone. 
+In the directory `efficientnet` you will find the scripts to train DL models. `train_and_evaluate.py` is the main script for single-label training and testing, and must be modified depending on the metric (e.g., calcium, narrowing, vacuum). `train_and_eval_multilabel.py` has the same function, but is specifically for multilabel training and testing. Modify and run `script_to_train.py` to create the shell scripts that either train or test the models. See the detailed comments within each script for where things need to get modified. Within `models`, you can find the trained model weights for narrowing, calcium, vacuum, global scores, and nitisinone. 
 
 # Segmentation
 In the directory `segmentation` you will find the links to the source code used to setup finetune-SAM and YOLO models. Additionally, you will find an example dataset (images and masks) used to finetune these models for cervical and lumbar X-ray images as well as example shell scripts and python training code specifically adapted from finetune-SAM and YOLO to fit our AKU dataset. More details about the function of each script is included in the README within `segmentation`. 
